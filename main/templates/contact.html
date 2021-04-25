@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Contactos NeedWatt{%endblock %}
+{% block meta_description %}Contactos da consultora energetica NeedWatt{% endblock %}
+{% block content %}
+
+  <!-- ***** Breadcrumb Area Start ***** -->
+  <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url({% static 'main/img/bg-img/ener0.jpg' %});">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12">
+          <h2 class="title">Contactos</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="breadcumb--con">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="./home.html"><i class="fa fa-home"></i> Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Contactos</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Breadcrumb Area End ***** -->
+
+  <!-- ***** Contact Area Start ***** -->
+  {% if message_name %}
+      <center>
+      <h2>Obrigado {{ message_name }}!</h2>
+      <p>Recebemos a sua mensagem e responderemos assim que for possível</p>
+      </center>
+    <br/><br/><br/>
+  {% else %}
+
+  <section class="contact-area mt-50 mb-100">
+    <div class="container">
+      <div class="row">
+        <!-- Contact Information -->
+        <div class="col-12 col-md-4">
+          <div class="contact-information">
+            <h5>Morada</h5>
+            <p>Gaia</p>
+
+            <h5>Nº Telefone</h5>
+            <p>916530234</p>
+
+            <h5>Email</h5>
+            <p class="mb-0">geral@needwatt.com</p>
+            <br/>
+            <h5>Skype</h5>
+            <p>needwatt</p>
+
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-12 col-md-8">
+          <div class="contact-form">
+            <!-- Section Heading -->
+            <div class="section-heading">
+              <h2>Entre em contracto com NeedWatt! </h2>
+              <div class="line"></div>
+            </div>
+            <!-- Form -->
+            <form action="./contact.html" method="post">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-lg-6">
+                  <input type="text" name="message-name" class="form-control mb-30" placeholder="O seu nome/empresa">
+                </div>
+                <div class="col-lg-6">
+                  <input type="email" name="message-email" class="form-control mb-30" placeholder="O seu email">
+                </div>
+                <div class="col-12">
+                  <textarea name="message" class="form-control mb-30" placeholder="A sua mensagem"></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn send_btn">Enviar mensagem</button>
+                </div>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+  <!-- ***** Contact Area End ***** -->
+
+{% endblock %}

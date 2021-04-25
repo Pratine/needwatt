@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Simulação da NeedWatt{%endblock %}
+{% block meta_description %}Faça já uma simulação do seu plano energético com NeedWatt{% endblock %}
+
+{% block content %}
+
+
+
+  <!-- ***** Breadcrumb Area Start ***** -->
+  <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url({% static 'main/img/bg-img/ener0.jpg' %});">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12">
+          <h2 class="title">Simulação</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="breadcumb--con">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="./home.html"><i class="fa fa-home"></i> Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Simulação</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Breadcrumb Area End ***** -->
+
+
+
+  <!-- ***** Contact Area Start ***** -->
+  {% if message_name %}
+      <center>
+      <h2>Obrigado {{ message_name }}!</h2>
+      <p>Receberá no seu email o resultado da simulação!</p>
+      </center>
+    <br/><br/><br/>
+  {% else %}
+
+  <section class="contact-area mt-50 mb-100">
+    <div class="container">
+      <div class="row">
+        <!-- Contact Form -->
+        <div class="col-12 col-md-8">
+          <div class="contact-form">
+            <!-- Section Heading -->
+            <div class="section-heading">
+              <h2>Faça uma simulação do seu plano energético com NeedWatt</h2>
+              <div class="line"></div>
+            </div>
+            <!-- Form -->
+            <form action="./simulation.html" method="post">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-lg-6">
+                  <input type="text" name="simulation-name" class="form-control mb-30" placeholder="O seu nome/empresa">
+                </div>
+                <div class="col-lg-6">
+                  <input type="email" name="simulation-email" class="form-control mb-30" placeholder="O seu email">
+                </div>
+
+                  {% if tension == 'btn' %}
+                        <h1>basfdasd</h1>
+                  {% endif %}
+
+                  {% if simulation_name %}
+
+                  {% endif %}
+
+                  {% if simulation_name %}
+
+                  {% endif %}
+                <div class="col-12">
+                  <button type="submit" class="btn send_btn">Fazer simulação!</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+  <!-- ***** Contact Area End ***** -->
+
+
+{% endblock %}

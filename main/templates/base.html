@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="{% block meta_description %}Bem vindo ao website da NeedWatt{% endblock %}">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Title -->
+  <title>{% block title %}NeedWatt{% endblock %}</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="{% static 'main/img/core-img/favicon0.ico' %}">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="preload-content">
+      <div id="load"></div>
+    </div>
+  </div>
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area">
+    <!-- Top Header Area -->
+
+    <!-- Top Header End -->
+
+    <!-- Main Header Start -->
+    <div class="main-header-area">
+      <div class="classy-nav-container breakpoint-off">
+        <div class="container">
+          <!-- Classy Menu -->
+          <nav class="classy-navbar justify-content-between" id="Nav">
+
+            <!-- Logo -->
+            <a class="nav-brand" href="./home.html"><img src="{% static 'main/img/core-img/logo0.png' %}" alt=""></a>
+
+            <!-- Navbar Toggler -->
+            <div class="classy-navbar-toggler">
+              <span class="navbarToggler"><span></span><span></span><span></span></span>
+            </div>
+
+            <!-- Menu -->
+            <div class="classy-menu">
+
+              <!-- Close Button -->
+              <div class="classycloseIcon">
+                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+              </div>
+
+              <!-- Nav Start -->
+              <div class="classynav">
+                <ul id="nav">
+                  <li><a href="./home.html">Home</a></li>
+                  <li><a href="./about.html">Sobre</a></li>
+                  <li><a href="./service.html">Serviços</a></li>
+                  <li><a href="./simulation.html">Simulação</a></li>
+                  <li><a href="./contact.html">Contactos</a></li>
+                </ul>
+              </div>
+              <!-- Nav End -->
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+{% block content %}
+
+{% endblock %}
+
+ <!-- ***** Footer Area Start ***** -->
+  <footer class="footer-area bg-img bg-gradient-overlay" style="background-image: url({% static 'main/img/bg-img/ener1.jpg' %});">
+    <div class="container">
+      <div class="row">
+        <!-- Single Footer Widget -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="single-footer-widget">
+            <a href="./home.html" class="d-block mb-4"><img src="{% static 'main/img/core-img/logo0.png' %}" alt=""></a>
+            <p>Poupe connosco!</p>
+            <div class="footer-contact">
+              <p><i class="icon_pin"></i> Porto</p>
+              <p><i class="icon_phone"></i> 919191919</p>
+              <p><i class="icon_mail"></i> geral@needwatt.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- ***** Footer Area End ***** -->
+
+  <!-- ******* All JS ******* -->
+  <!-- jQuery js -->
+  <script src="{% static 'main/js/jquery.min.js' %}"></script>
+  <!-- Popper js -->
+  <script src="{% static 'main/js/popper.min.js' %}"></script>
+  <!-- Bootstrap js -->
+  <script src="{% static 'main/js/bootstrap.min.js' %}"></script>
+  <!-- All js -->
+  <script src="{% static 'main/js/dento.bundle.js' %}"></script>
+  <!-- Active js -->
+  <script src="{% static 'main/js/default-assets/active.js' %}"></script>
+
+</body>
+
+</html>

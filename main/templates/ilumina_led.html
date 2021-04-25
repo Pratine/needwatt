@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Serviços da NeedWatt{%endblock %}
+{% block meta_description %}Iluminação Led{% endblock %}
+
+{% block content %}
+
+<!-- ***** Breadcrumb Area Start ***** -->
+<div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url({% static 'main/img/bg-img/ener0.jpg' %});">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-12">
+        <h2 class="title">Iluminação Led</h2>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="breadcumb--con">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="./home.html"><i class="fa fa-home"></i> Home</a></li>
+            <li class="breadcrumb-item"><a href="./service.html"><i class="fa fa-service"></i> Serviços</a></li>
+            <li class="breadcrumb-item active" aria-current="page"> Iluminação Led</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ***** Breadcrumb Area End ***** -->
+
+
+<section class="about-us-area mt-70">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-12 col-md-6">
+        <div class="about-us-thumbnail mb-50">
+          <img src="{% static 'main/img/bg-img/ener8.jpg' %}" alt="">
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="service_content mb-50">
+          <div class="section-heading">
+            <h2>Iluminação Led</h2>
+            <h3>Projetos Iluminação Led</h3>
+            <div class="line"></div>
+          </div>
+          <p>A tecnologia de iluminação tem sofrido nos últimos anos avanços significativos, nomeadamente com a introdução e rápido desenvolvimento dos LED’s.</p>
+          <p>A Needwatt  coopera com os mais prestigiados fabricantes nacionais e internacionais para Lhe proporcionar uma ampla gama de soluções de iluminação LED,  tanto para instalações industriais como também para comerciais.</p>
+          <h3>Benefícios da Iluminação Led</h3>
+          <p>•	Apresentação de estudo de viabilidade técnico-financeiro de Eficiência Energética</p>
+          <p>•	Diminuição de consumo de energia elétrica até 70%</p>
+          <p>•	Redução de despesas de manutenção</p>
+          <p>•	2 a 5 Anos de Garantia</p>
+          <p>•	Possibilidade de Investimento nulo</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
