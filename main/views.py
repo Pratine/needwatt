@@ -33,8 +33,8 @@ def contact(request):
 
 def simulation(request):
     if request.method == "POST":
-        simulation_name = request.POST['message-name']
-        simulation_email = request.POST['message-email']
+        simulation_name = request.POST['simulation-name']
+        simulation_email = request.POST['simulation-email']
         tension = request.POST['tension']
         hired_power = request.POST["hired-power"]
         cicle = request.POST['cicle']
