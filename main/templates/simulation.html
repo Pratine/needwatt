@@ -33,7 +33,24 @@
   </div>
   <!-- ***** Breadcrumb Area End ***** -->
 
+  <script language="javascript">
+      const cicle = new Array();
+      cicle[0] = new Array("Selecione");
+      cicle[1] = new Array("Simple","Bi-Horário","Tri-Horário");
+      cicle[2] = new Array("Diario","Semanal");
+      cicle[3] = new Array("Semanal  c/ feriados","Semanal c/opção do cliente");
 
+    function changeCicle(tension_selection_combo){
+        const comboValueCicle = tension_selection_combo.value;
+        document.forms["form"].elements["cicle_selection_combo"].options.length=0;
+          for (var i = 0; i < cicle[comboValueCicle].length; i++) {
+              const option_cicle = document.createElement("option");
+              option_cicle.setAttribute('value', i+1);
+              option_cicle.innerHTML = cicle[comboValueCicle][i];
+              document.forms["form"].elements["cicle_selection_combo"].appendChild(option_cicle);
+      }
+    }
+  </script>
 
   <!-- ***** Contact Area Start ***** -->
   {% if message_name %}
@@ -56,7 +73,7 @@
               <div class="line"></div>
             </div>
             <!-- Form -->
-            <form action="./simulation.html" method="post">
+            <form action="" method="post" name="form">
               {% csrf_token %}
               <div class="row">
                 <div class="col-lg-6">
@@ -65,21 +82,19 @@
                 <div class="col-lg-6">
                   <input type="email" name="simulation-email" class="form-control mb-30" placeholder="O seu email">
                 </div>
-
-                  {% if tension == 'btn' %}
-                        <h1>basfdasd</h1>
-                  {% endif %}
-
-                  {% if simulation_name %}
-
-                  {% endif %}
-
-                  {% if simulation_name %}
-
-                  {% endif %}
-                <div class="col-12">
-                  <button type="submit" class="btn send_btn">Fazer simulação!</button>
+              <div class="col-lg-6">
+                <select name="tension_selection_combo" id="" class="form-control mb-30" onchange="changeCicle(this);">
+                    <option value="0">Selecione</option>
+                    <option value="1">BTN</option>
+                    <option value="2">BTE</option>
+                    <option value="3">MT</option>
+                </select>
+                <select name="cicle_selection_combo" id="" class="form-control mb-30">
+                </select>
                 </div>
+              </div>
+              <div class="col-12">
+                  <button type="submit" class="btn send_btn">Faça uma simulação!</button>
               </div>
             </form>
           </div>
