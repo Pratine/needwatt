@@ -60,7 +60,7 @@
 body {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  font-size: 14px; }
+  font-size: 16px; }
 
 h1,
 h2,
@@ -89,8 +89,8 @@ li {
 
 p {
   line-height: 1.9;
-  color: #707070;
-  font-size: 14px;
+  color: #1f1f1f;
+  font-size: 16px;
   font-weight: 400; }
 
 img {
@@ -386,7 +386,7 @@ ul {
   #scrollUp:focus, #scrollUp:hover {
     background-color: #000; }
 
-.dento-btn {
+.btn {
   position: relative;
   z-index: 1;
   min-width: 170px;
@@ -458,7 +458,7 @@ ul {
   .top-header-area .top-header-content a {
     display: inline-block;
     font-size: 12px;
-    color: #707070; }
+    color: #1f1f1f; }
     .top-header-area .top-header-content a i {
       color: #00aeef;
       margin-right: 5px; }
@@ -471,7 +471,7 @@ ul {
       .top-header-area .top-header-content a span {
         display: none; } }
   .top-header-area .top-header-social-info a {
-    color: #707070;
+    color: #1f1f1f;
     display: inline-block;
     font-size: 14px;
     margin-left: 10px; }
@@ -1160,7 +1160,7 @@ ul {
     display: block;
     padding: 15px 0;
     font-size: 16px;
-    color: #707070;
+    color: #1f1f1f;
     font-weight: 500;
     border-bottom: 1px solid #ebebeb; }
     @media only screen and (max-width: 767px) {
@@ -1246,7 +1246,7 @@ ul {
     font-size: 18px;
     font-style: italic;
     margin-bottom: 15px;
-    color: #707070;
+    color: #1f1f1f;
     line-height: 1.7;
     font-weight: 400; }
     @media only screen and (max-width: 767px) {
