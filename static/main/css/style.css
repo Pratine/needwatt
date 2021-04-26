@@ -29,7 +29,7 @@
   [Color Codes]
 
   $heading: #333333; [Heading Color]
-  $text: #707070; [Text Color]
+  $text: #1f1f1f; [Text Color]
   $bg-gray: #f4f4f4; [Gray Background]
   $primary: #00aeef; [Primary Color]
   $white: #ffffff; [White Color]
@@ -161,7 +161,7 @@ ul {
   top: 0;
   width: 30px;
   height: 30px;
-  background-color: #00aeef;
+  background-color: #428bca;
   text-align: center;
   right: 0;
   padding-right: 0;
@@ -294,7 +294,7 @@ ul {
     border: 3px;
     border-style: solid;
     border-color: transparent;
-    border-top-color: #00aeef;
+    border-top-color: #428bca;
     -webkit-animation: dentorotate 2400ms linear infinite;
     animation: dentorotate 2400ms linear infinite;
     z-index: 999; }
@@ -309,7 +309,7 @@ ul {
       border: 3px;
       border-style: solid;
       border-color: transparent;
-      border-top-color: #00aeef;
+      border-top-color: #428bca;
       -webkit-animation: dentorotate 2700ms linear infinite;
       animation: dentorotate 2700ms linear infinite; }
     #preloader #dento-load:after {
@@ -323,7 +323,7 @@ ul {
       border: 3px;
       border-style: solid;
       border-color: transparent;
-      border-top-color: #00aeef;
+      border-top-color: #428bca;
       -webkit-animation: dentorotate 1800ms linear infinite;
       animation: dentorotate 1800ms linear infinite; }
 
@@ -363,7 +363,7 @@ ul {
   .section-heading .line {
     width: 70px;
     height: 4px;
-    background-color: #00aeef; }
+    background-color: #428bca; }
   .section-heading.text-center .line {
     margin: 0 auto; }
   .section-heading.white h2 {
@@ -375,7 +375,7 @@ ul {
   line-height: 42px;
   right: 0;
   width: 40px;
-  background-color: #00aeef;
+  background-color: #428bca;
   color: #ffffff;
   text-align: center;
   height: 40px;
@@ -400,11 +400,11 @@ ul {
   text-transform: uppercase;
   color: #ffffff;
   border-radius: 2px;
-  background-color: #00aeef;
+  background-color: #428bca;
   -webkit-transition: all 500ms;
   -o-transition: all 500ms;
   transition: all 500ms;
-  border: 2px solid #00aeef; }
+  border: 2px solid #428bca; }
   @media only screen and (max-width: 767px) {
     .dento-btn {
       min-width: 120px;
@@ -416,10 +416,10 @@ ul {
   .dento-btn.active, .dento-btn:focus, .dento-btn:hover {
     box-shadow: none;
     background-color: transparent;
-    color: #00aeef; }
+    color: #428bca; }
   .dento-btn.btn-2:focus, .dento-btn.btn-2:hover {
     background-color: #ffffff;
-    color: #00aeef; }
+    color: #428bca; }
   .dento-btn.booking-btn {
     color: #ffffff !important;
     font-weight: 600;
@@ -431,7 +431,7 @@ ul {
       font-size: 12px;
       font-weight: 600;
       background-color: #ffffff;
-      color: #00aeef !important; }
+      color: #428bca !important; }
 
 .header-area {
   position: relative;
@@ -460,7 +460,7 @@ ul {
     font-size: 12px;
     color: #1f1f1f; }
     .top-header-area .top-header-content a i {
-      color: #00aeef;
+      color: #428bca;
       margin-right: 5px; }
     .top-header-area .top-header-content a:last-child {
       margin-left: 30px; }
@@ -476,7 +476,7 @@ ul {
     font-size: 14px;
     margin-left: 10px; }
     .top-header-area .top-header-social-info a:focus, .top-header-area .top-header-social-info a:hover {
-      color: #00aeef; }
+      color: #428bca; }
 
 .classy-nav-container {
   background-color: transparent; }
@@ -499,7 +499,7 @@ ul {
       font-size: 14px;
       text-transform: uppercase; }
       .classy-nav-container .classy-navbar .classynav ul li a:focus, .classy-nav-container .classy-navbar .classynav ul li a:hover {
-        color: #00aeef; }
+        color: #428bca; }
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .classy-nav-container .classy-navbar .classynav ul li a {
           padding: 0 10px;
@@ -675,10 +675,10 @@ ul {
         font-size: 14px;
         text-align: center;
         line-height: 40px;
-        color: #00aeef;
+        color: #428bca;
         margin: 0 7px; }
         .single-dentist-area .dentist-content .dentist-social-info a:focus, .single-dentist-area .dentist-content .dentist-social-info a:hover {
-          background-color: #00aeef;
+          background-color: #428bca;
           color: #ffffff; }
     .single-dentist-area .dentist-content .dentist-info {
       width: 100%;
@@ -731,7 +731,7 @@ ul {
   z-index: 1; }
   .dento-price-table table thead tr > td,
   .dento-price-table table thead tr > th {
-    background-color: #00aeef;
+    background-color: #428bca;
     color: #ffffff; }
   .dento-price-table table tr > td,
   .dento-price-table table tr > th {
@@ -765,7 +765,7 @@ ul {
       .single-service h6 {
         font-size: 13px; } }
   .single-service:focus h6, .single-service:hover h6 {
-    color: #00aeef; }
+    color: #428bca; }
 
 .single-service--area {
   position: relative;
@@ -808,7 +808,7 @@ ul {
     width: 60px;
     height: 60px;
     color: #ffffff;
-    background-color: #00aeef;
+    background-color: #428bca;
     border-radius: 50%;
     top: 50%;
     left: 50%;
@@ -854,7 +854,7 @@ ul {
   z-index: 1; }
   .single-cta i {
     font-size: 50px;
-    color: #00aeef;
+    color: #428bca;
     margin-bottom: 15px;
     display: block; }
     @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -959,7 +959,7 @@ ul {
     .breadcumb--con .breadcrumb .breadcrumb-item > a:hover,
     .breadcumb--con .breadcrumb .breadcrumb-item.active:focus,
     .breadcumb--con .breadcrumb .breadcrumb-item.active:hover {
-      color: #00aeef; }
+      color: #428bca; }
   .breadcumb--con .breadcrumb .breadcrumb-item.active {
     color: #707070; }
     .breadcumb--con .breadcrumb .breadcrumb-item.active:focus, .breadcumb--con .breadcrumb .breadcrumb-item.active:hover {
@@ -988,7 +988,7 @@ ul {
       display: block;
       margin-bottom: 10px; }
       .single-blog-item .blog-content .post-title:focus, .single-blog-item .blog-content .post-title:hover {
-        color: #00aeef; }
+        color: #428bca; }
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .single-blog-item .blog-content .post-title {
           font-size: 16px; } }
@@ -999,11 +999,11 @@ ul {
       color: #b7b7b7;
       margin-right: 15px; }
       .single-blog-item .blog-content .post-meta a i {
-        color: #00aeef; }
+        color: #428bca; }
       .single-blog-item .blog-content .post-meta a:last-child {
         margin-right: 0; }
       .single-blog-item .blog-content .post-meta a:focus, .single-blog-item .blog-content .post-meta a:hover {
-        color: #00aeef; }
+        color: #428bca; }
   .single-blog-item.style-2 {
     box-shadow: none; }
     .single-blog-item.style-2 .blog-content,
@@ -1037,12 +1037,12 @@ ul {
     color: #707070;
     font-size: 16px; }
     .dento-pagination .pagination .page-item .page-link:focus, .dento-pagination .pagination .page-item .page-link:hover {
-      background-color: #00aeef;
-      border-color: #00aeef;
+      background-color: #428bca;
+      border-color: #428bca;
       color: #ffffff; }
   .dento-pagination .pagination .page-item.active .page-link {
-    background-color: #00aeef;
-    border-color: #00aeef;
+    background-color: #428bca;
+    border-color: #428bca;
     color: #ffffff; }
 
 .comment_area {
@@ -1095,7 +1095,7 @@ ul {
           .comment_area .comment-content .comment-meta .post-author span {
             font-size: 10px; } }
       .comment_area .comment-content .comment-meta .post-author:focus, .comment_area .comment-content .comment-meta .post-author:hover {
-        color: #00aeef; }
+        color: #428bca; }
     .comment_area .comment-content .comment-meta p {
       margin-bottom: 15px;
       font-size: 14px;
@@ -1114,7 +1114,7 @@ ul {
         .comment_area .comment-content .comment-meta .comment-reply {
           font-size: 12px; } }
       .comment_area .comment-content .comment-meta .comment-reply:focus, .comment_area .comment-content .comment-meta .comment-reply:hover {
-        color: #00aeef; }
+        color: #428bca; }
   .comment_area .children {
     margin-left: 50px; }
     .comment_area .children .single_comment_area:last-of-type {
@@ -1139,7 +1139,7 @@ ul {
     padding: 0 20px; }
     .search-widget form .form-control:focus {
       box-shadow: none;
-      border-color: #00aeef; }
+      border-color: #428bca; }
   .search-widget form button {
     position: absolute;
     width: auto;
@@ -1167,7 +1167,7 @@ ul {
       .catagories-list li a {
         font-size: 14px; } }
     .catagories-list li a:focus, .catagories-list li a:hover {
-      color: #00aeef; }
+      color: #428bca; }
   .catagories-list li:last-child a {
     border-bottom: none; }
 
@@ -1192,7 +1192,7 @@ ul {
       margin-bottom: 5px;
       font-weight: 600; }
       .single-news-area .blog-content .post-title:focus, .single-news-area .blog-content .post-title:hover {
-        color: #00aeef; }
+        color: #428bca; }
     .single-news-area .blog-content .post-date {
       color: #b7b7b7;
       display: block;
@@ -1220,11 +1220,11 @@ ul {
       color: #b7b7b7;
       margin-right: 15px; }
       .blog-details-area .post-meta a i {
-        color: #00aeef; }
+        color: #428bca; }
       .blog-details-area .post-meta a:last-child {
         margin-right: 0; }
       .blog-details-area .post-meta a:focus, .blog-details-area .post-meta a:hover {
-        color: #00aeef; }
+        color: #428bca; }
   .blog-details-area p {
     margin-bottom: 30px;
     font-weight: 500; }
@@ -1257,7 +1257,7 @@ ul {
     font-size: 18px; }
     .dento-blockquote .text h6 span {
       font-size: 12px;
-      color: #00aeef; }
+      color: #428bca; }
     @media only screen and (max-width: 767px) {
       .dento-blockquote .text h6 {
         font-size: 16px; } }
@@ -1267,7 +1267,7 @@ ul {
   width: 120px;
   height: 46px;
   border-radius: 3px;
-  background-color: #00aeef;
+  background-color: #428bca;
   line-height: 46px;
   color: #ffffff;
   margin-right: 10px;
@@ -1384,7 +1384,7 @@ ul {
       .single-footer-widget .footer-contact p i {
         display: inline-block;
         margin-right: 5px;
-        color: #00aeef; }
+        color: #428bca; }
       .single-footer-widget .footer-contact p:last-child {
         margin-bottom: 0; }
   .single-footer-widget .opening-hours {
@@ -1424,7 +1424,7 @@ ul {
         margin-bottom: 17px;
         display: block; }
         .single-footer-widget .quick-links li a:focus, .single-footer-widget .quick-links li a:hover {
-          color: #00aeef; }
+          color: #428bca; }
       .single-footer-widget .quick-links li:last-child a {
         margin-bottom: 0; }
   .single-footer-widget .footer-newsletter-form {
@@ -1443,7 +1443,7 @@ ul {
     .single-footer-widget .footer-newsletter-form button {
       width: auto;
       padding: 0 15px;
-      background-color: #00aeef;
+      background-color: #428bca;
       color: #ffffff;
       border: none;
       border-radius: 0 2px 2px 0;
@@ -1501,7 +1501,7 @@ ul {
   position: relative;
   z-index: 1;
   padding: 30px 50px;
-  background-color: #00aeef;
+  background-color: #428bca;
   border-radius: 3px; }
   @media only screen and (max-width: 767px) {
     .contact-information {
@@ -1522,7 +1522,7 @@ ul {
     font-style: italic; }
     .contact-form .form-control:focus {
       box-shadow: none;
-      border-color: #00aeef; }
+      border-color: #428bca; }
   .contact-form textarea.form-control {
     height: 110px;
     padding: 15px; }
