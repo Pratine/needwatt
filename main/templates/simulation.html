@@ -40,6 +40,8 @@
       cicle[2] = new Array("Selecione","Diario","Semanal");
       cicle[3] = new Array("Selecione","Semanal  c/ feriados","Semanal c/opção do cliente");
 
+      const btn_tension = new Array("Selecione","1.15","2.30","3.45","4.60","5.75","6.90","10.35","13.80","17.25","20.70","27.60","34.50","41.40");
+
       function changeCicle(tension_selection_combo){
         const comboValueCicle = tension_selection_combo.value;
         document.forms["form"].elements["cicle_selection_combo"].options.length=0;
@@ -52,7 +54,7 @@
         }
 
         function complete_btn_simple() {
-
+          var select = document.createElement('select');
         }
 
         function complete_btn_bi() {
@@ -62,6 +64,33 @@
         }
 
         function complete_mt_bte(){
+          var tarrif_pontas = document.createElement('input');
+          tarrif_pontas.setAttribute("type","text");
+          tarrif_pontas.setAttribute("name","input_tarrif_pontas");
+          tarrif_pontas.setAttribute("class","form-control mb-30");
+          tarrif_pontas.setAttribute("placeholder","Consumo em horas de ponta");
+          document.forms["form"].appendChild(tarrif_pontas);
+
+          var tarrif_cheias = document.createElement('input');
+          tarrif_cheias.setAttribute("type","text");
+          tarrif_cheias.setAttribute("name","input_tarrif_cheias");
+          tarrif_cheias.setAttribute("class","form-control mb-30");
+          tarrif_cheias.setAttribute("placeholder","Consumo em horas de cheia ");
+          document.forms["form"].appendChild(tarrif_cheias);
+
+          var tarrif_vazio_normal = document.createElement('input');
+          tarrif_vazio_normal.setAttribute("type","text");
+          tarrif_vazio_normal.setAttribute("name","tarrif_vazio_normal");
+          tarrif_vazio_normal.setAttribute("class","form-control mb-30");
+          tarrif_vazio_normal.setAttribute("placeholder","Consumo em horas de vazio normal");
+          document.forms["form"].appendChild(tarrif_vazio_normal);
+
+          var tarrif_super_vazio = document.createElement('input');
+          tarrif_super_vazio.setAttribute("type","text");
+          tarrif_super_vazio.setAttribute("name","tarrif_super_vazio");
+          tarrif_super_vazio.setAttribute("class","form-control mb-30");
+          tarrif_super_vazio.setAttribute("placeholder","Consumo em horas de super vazio ");
+          document.forms["form"].appendChild(tarrif_super_vazio);
         }
 
         function moreOptions(tension_selection_combo, cicle_selection_combo){
