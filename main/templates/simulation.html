@@ -36,20 +36,52 @@
   <script language="javascript">
       const cicle = new Array();
       cicle[0] = new Array("Selecione");
-      cicle[1] = new Array("Simple","Bi-Horário","Tri-Horário");
-      cicle[2] = new Array("Diario","Semanal");
-      cicle[3] = new Array("Semanal  c/ feriados","Semanal c/opção do cliente");
+      cicle[1] = new Array("Selecione","Simple","Bi-Horário","Tri-Horário");
+      cicle[2] = new Array("Selecione","Diario","Semanal");
+      cicle[3] = new Array("Selecione","Semanal  c/ feriados","Semanal c/opção do cliente");
 
-    function changeCicle(tension_selection_combo){
+      function changeCicle(tension_selection_combo){
         const comboValueCicle = tension_selection_combo.value;
         document.forms["form"].elements["cicle_selection_combo"].options.length=0;
-          for (var i = 0; i < cicle[comboValueCicle].length; i++) {
-              const option_cicle = document.createElement("option");
-              option_cicle.setAttribute('value', i+1);
-              option_cicle.innerHTML = cicle[comboValueCicle][i];
-              document.forms["form"].elements["cicle_selection_combo"].appendChild(option_cicle);
-      }
-    }
+        for (var i = 0; i < cicle[comboValueCicle].length; i++) {
+            const option_cicle = document.createElement("option");
+            option_cicle.setAttribute('value', i+1);
+            option_cicle.innerHTML = cicle[comboValueCicle][i];
+            document.forms["form"].elements["cicle_selection_combo"].appendChild(option_cicle);
+          }
+        }
+
+        function complete_btn_simple() {
+
+        }
+
+        function complete_btn_bi() {
+        }
+
+        function complete_btn_tri() {
+        }
+
+        function complete_mt_bte(){
+        }
+
+        function moreOptions(tension_selection_combo, cicle_selection_combo){
+          var tensionChosen =  tension_selection_combo.value;
+          var cicleChosen = cicle_selection_combo.value;
+          if (tensionChosen == 1) {
+            if (cicleChosen == 2) {
+              complete_btn_simple();
+            }
+            if (cicleChosen == 3) {
+              complete_btn_bi();
+            }
+            if (cicleChosen == 4) {
+              complete_btn_tri();
+            }
+          }
+          if (tensionChosen == 2 || tensionChosen == 3) {
+            complete_mt_bte();
+          }
+        }
   </script>
 
   <!-- ***** Contact Area Start ***** -->
@@ -89,12 +121,9 @@
                     <option value="2">BTE</option>
                     <option value="3">MT</option>
                 </select>
-                <select name="cicle_selection_combo" id="" class="form-control mb-30">
+                <select name="cicle_selection_combo" id="" class="form-control mb-30" onchange="moreOptions(tension_selection_combo,this)">
                 </select>
                 </div>
-              </div>
-              <div class="col-12">
-                  <button type="submit" class="btn send_btn">Faça uma simulação!</button>
               </div>
             </form>
           </div>
