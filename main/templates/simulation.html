@@ -34,20 +34,20 @@
   <!-- ***** Breadcrumb Area End ***** -->
 
   <script language="javascript">
-      const cicle = [];
+      const cicle = new Array();
       cicle[0] = new Array("Selecione o ciclo");
-      cicle[1] = ["Selecione o ciclo","Simple","Bi-Horário","Tri-Horário"];
-      cicle[2] = ["Selecione o ciclo","Diario","Semanal"];
-      cicle[3] = ["Selecione o ciclo","Semanal  c/ feriados","Semanal c/opção do cliente"];
+      cicle[1] = new Array("Selecione o ciclo","Simple","Bi-Horário","Tri-Horário");
+      cicle[2] = new Array("Selecione o ciclo","Diario","Semanal");
+      cicle[3] = new Array("Selecione o ciclo","Semanal  c/ feriados","Semanal c/opção do cliente");
 
-      const btn_tension = ["Selecione","1.15","2.30","3.45","4.60","5.75","6.90","10.35","13.80","17.25","20.70","27.60","34.50","41.40"];
+      const btn_tension = new Array("Selecione","1.15","2.30","3.45","4.60","5.75","6.90","10.35","13.80","17.25","20.70","27.60","34.50","41.40");
 
       function changeCicle(tension_selection_combo){
         const comboValueCicle = tension_selection_combo.value;
         document.forms["form"].elements["cicle_selection_combo"].options.length=0;
-        for (let i = 0; i < cicle[comboValueCicle].length; i++) {
-            let option_cicle = document.createElement("option");
-            option_cicle.setAttribute('value', i);
+        for (var i = 0; i < cicle[comboValueCicle].length; i++) {
+            var option_cicle = document.createElement("option");
+            option_cicle.setAttribute('value', i+1);
             option_cicle.innerHTML = cicle[comboValueCicle][i];
             document.forms["form"].elements["cicle_selection_combo"].appendChild(option_cicle);
           }
@@ -56,22 +56,22 @@
         function complete_btn_simple() {
 
           document.forms["form"].elements["tension_selection_combo"].options.length=0;
-          for (let i = 0; i < btn_tension.length; i++) {
-              let option_tension = document.createElement("option");
-              option_tension.setAttribute('value', i+1);
+          for (var i = 0; i < btn_tension.length; i++) {
+            var option_tension = document.createElement("option");
+            option_tension.setAttribute('value', i+1);
             option_tension.innerHTML = btn_tension[i];
             document.forms["form"].elements["tension_selection_combo"].appendChild(option_tension);
           }
 
-            let value_p_month = document.createElement('input');
-            value_p_month.setAttribute("type","text");
+          var value_p_month = document.createElement('input');
+          value_p_month.setAttribute("type","text");
           value_p_month.setAttribute("name","value_p_month");
           value_p_month.setAttribute("class","form-control mb-30 col-lg-6");
           value_p_month.setAttribute("placeholder","Valor por mês");
           document.forms["form"].appendChild(value_p_month)
 
-            let btn = document.createElement('button');
-            btn.setAttribute("type","submit");
+          var btn = document.createElement('button');
+          btn.setAttribute("type","submit");
           btn.setAttribute("class","btn send_btn");
           btn.textContent = 'Faça a simulação';
           document.forms["form"].appendChild(btn);
@@ -79,15 +79,15 @@
 
         function complete_btn_bi() {
 
-            let value_p_month = document.createElement('input');
-            value_p_month.setAttribute("type","text");
+          var value_p_month = document.createElement('input');
+          value_p_month.setAttribute("type","text");
           value_p_month.setAttribute("name","value_p_month");
           value_p_month.setAttribute("class","form-control mb-30 col-lg-6");
           value_p_month.setAttribute("placeholder","Valor por mês");
           document.forms["form"].appendChild(value_p_month)
 
-            let btn = document.createElement('button');
-            btn.setAttribute("type","submit");
+          var btn = document.createElement('button');
+          btn.setAttribute("type","submit");
           btn.setAttribute("class","btn send_btn");
           btn.textContent = 'Faça a simulação';
           document.forms["form"].appendChild(btn);
@@ -95,14 +95,14 @@
 
         function complete_btn_tri() {
 
-          let value_p_month = document.createElement('input');
+          var value_p_month = document.createElement('input');
           value_p_month.setAttribute("type","text");
           value_p_month.setAttribute("name","value_p_month");
           value_p_month.setAttribute("class","form-control mb-30 col-lg-6");
           value_p_month.setAttribute("placeholder","Valor por mês");
-          document.forms["form"].appendChild(value_p_month);
+          document.forms["form"].appendChild(value_p_month)
 
-          let btn = document.createElement('button');
+          var btn = document.createElement('button');
           btn.setAttribute("type","submit");
           btn.setAttribute("class","btn send_btn");
           btn.textContent = 'Faça a simulação';
@@ -111,7 +111,7 @@
 
         function complete_mt_bte(){
 
-          let select = document.createElement('select');
+          var select = document.createElement('select');
           select.setAttribute("id","redes");
           select.setAttribute("name","redes");
           select.setAttribute("class","form-control mb-30 col-lg-6");
@@ -122,43 +122,43 @@
 
           document.forms["form"].appendChild(select);
 
-          let tarrif_pontas = document.createElement('input');
+          var tarrif_pontas = document.createElement('input');
           tarrif_pontas.setAttribute("type","text");
           tarrif_pontas.setAttribute("name","input_tarrif_pontas");
           tarrif_pontas.setAttribute("class","form-control mb-30 col-lg-6");
           tarrif_pontas.setAttribute("placeholder","Consumo em horas de ponta");
           document.forms["form"].appendChild(tarrif_pontas);
 
-          let tarrif_cheias = document.createElement('input');
+          var tarrif_cheias = document.createElement('input');
           tarrif_cheias.setAttribute("type","text");
           tarrif_cheias.setAttribute("name","input_tarrif_cheias");
           tarrif_cheias.setAttribute("class","form-control mb-30 col-lg-6");
           tarrif_cheias.setAttribute("placeholder","Consumo em horas de cheia ");
           document.forms["form"].appendChild(tarrif_cheias);
 
-          let tarrif_vazio_normal = document.createElement('input');
+          var tarrif_vazio_normal = document.createElement('input');
           tarrif_vazio_normal.setAttribute("type","text");
           tarrif_vazio_normal.setAttribute("name","tarrif_vazio_normal");
           tarrif_vazio_normal.setAttribute("class","form-control mb-30 col-lg-6");
           tarrif_vazio_normal.setAttribute("placeholder","Consumo em horas de vazio normal");
           document.forms["form"].appendChild(tarrif_vazio_normal);
 
-          let tarrif_super_vazio = document.createElement('input');
+          var tarrif_super_vazio = document.createElement('input');
           tarrif_super_vazio.setAttribute("type","text");
-          tarrif_super_vazio.setAttribute("name","tarrif_vazio_normal");
+          tarrif_super_vazio.setAttribute("name","tarrif_super_vazio");
           tarrif_super_vazio.setAttribute("class","form-control mb-30 col-lg-6");
           tarrif_super_vazio.setAttribute("placeholder","Consumo em horas de super vazio ");
           document.forms["form"].appendChild(tarrif_super_vazio);
 
 
-          let value_p_month = document.createElement('input');
+          var value_p_month = document.createElement('input');
           value_p_month.setAttribute("type","text");
           value_p_month.setAttribute("name","value_p_month");
           value_p_month.setAttribute("class","form-control mb-30 col-lg-6");
           value_p_month.setAttribute("placeholder","Valor por mês");
           document.forms["form"].appendChild(value_p_month);
 
-          let btn = document.createElement('button');
+          var btn = document.createElement('button');
           btn.setAttribute("type","submit");
           btn.setAttribute("class","btn send_btn");
           btn.textContent = 'Faça a simulação';
@@ -167,22 +167,20 @@
         }
 
         function moreOptions(tension_selection_combo, cicle_selection_combo){
-
-          let tensionChosen = tension_selection_combo.value;
-          let cicleChosen = cicle_selection_combo.value;
-
-          if (tensionChosen === 1) {
-            if (cicleChosen === 2) {
+          var tensionChosen =  tension_selection_combo.value;
+          var cicleChosen = cicle_selection_combo.value;
+          if (tensionChosen == 1) {
+            if (cicleChosen == 2) {
               complete_btn_simple();
             }
-            if (cicleChosen === 3) {
+            if (cicleChosen == 3) {
               complete_btn_bi();
             }
-            if (cicleChosen === 4) {
+            if (cicleChosen == 4) {
               complete_btn_tri();
             }
           }
-          if (tensionChosen === 2 || tensionChosen === 3) {
+          if (tensionChosen == 2 || tensionChosen == 3) {
             complete_mt_bte();
           }
         }
@@ -224,10 +222,9 @@
                     <option value="1">BTN</option>
                     <option value="2">BTE</option>
                     <option value="3">MT</option>
-                </select>cicle_selection_combo
+                </select>
                 <select name="cicle_selection_combo" id="" class="form-control mb-30" onchange="moreOptions(tension_selection_combo,this)">
                 </select>
-              </div>
               </div>
             </form>
           </div>
