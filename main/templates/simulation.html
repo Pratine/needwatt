@@ -47,7 +47,7 @@
         document.forms["form"].elements["cicle_selection_combo"].options.length=0;
         for (let i = 0; i < cicle[comboValueCicle].length; i++) {
             let option_cicle = document.createElement("option");
-            option_cicle.setAttribute('value', i+1);
+            option_cicle.setAttribute('value', i);
             option_cicle.innerHTML = cicle[comboValueCicle][i];
             document.forms["form"].elements["cicle_selection_combo"].appendChild(option_cicle);
           }
@@ -145,7 +145,7 @@
 
           let tarrif_super_vazio = document.createElement('input');
           tarrif_super_vazio.setAttribute("type","text");
-          tarrif_super_vazio.setAttribute("name","tarrif_super_vazio");
+          tarrif_super_vazio.setAttribute("name","tarrif_vazio_normal");
           tarrif_super_vazio.setAttribute("class","form-control mb-30 col-lg-6");
           tarrif_super_vazio.setAttribute("placeholder","Consumo em horas de super vazio ");
           document.forms["form"].appendChild(tarrif_super_vazio);

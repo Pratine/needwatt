@@ -46,13 +46,14 @@ def simulation(request):
             price_p_month = request.POST["price-p-month"]
             hired_power = request.POST["hired-power"]
 
-            if cicle == "simple":
+            # For simple
+            if cicle == "1":
                 save = simulations.simulation_btn_simple(hired_power,
                                                          n_days,
                                                          price_p_month)
                 message = get_template("email_btn.html").render(Context({
                     'name': simulation_name,
-                    'cicle': cicle,
+                    'cicle_selection_combo': cicle,
                     'hired_power': hired_power,
                     'save_percentage': save,
                 }))
@@ -67,13 +68,14 @@ def simulation(request):
 
                 return render(request, 'simulation.html', {'simulation_name': simulation_name})
 
-            elif cicle == "bi_hor":
+            # For Bi-Hor
+            elif cicle == "2":
                 save = simulations.simulation_btn_bi_hor(hired_power,
                                                          n_days,
                                                          price_p_month)
                 message = get_template("email_btn.html").render(Context({
                     'name': simulation_name,
-                    'cicle': cicle,
+                    'cicle_selection_combo': cicle,
                     'hired_power': hired_power,
                     'save_percentage': save,
                 }))
@@ -88,13 +90,14 @@ def simulation(request):
 
                 return render(request, 'simulation.html', {'simulation_name': simulation_name})
 
-            elif cicle == "tri_hor":
+            # For Tri-Hor
+            elif cicle == "3":
                 save = simulations.simulation_btn_tri_hor(hired_power,
                                                           n_days,
                                                           price_p_month)
                 message = get_template("email_btn.html").render(Context({
                     'name': simulation_name,
-                    'cicle': cicle,
+                    'cicle_selection_combo': cicle,
                     'hired_power': hired_power,
                     'save_percentage': save,
                 }))
@@ -111,11 +114,11 @@ def simulation(request):
 
         # For BTE
         elif tension == "2":
-            tarrif_pontas = request.POST['tarrif-pontas']
-            tarrif_cheias = request.POST['tarrif-cheias']
-            tarrif_vazio_normal = request.POST['tarrif-vazio_normal']
-            tarrif_super_vazio = request.POST['tarrif-super-vazio']
-            price_p_month = request.POST['price-p-month']
+            tarrif_pontas = request.POST['input_tarrif_pontas']
+            tarrif_cheias = request.POST['input_tarrif_cheias']
+            tarrif_vazio_normal = request.POST['tarrif_vazio_normal']
+            tarrif_super_vazio = request.POST['tarrif_vazio_normal']
+            price_p_month = request.POST['value_p_month']
 
             save = simulations.simulation_bte(tarrif_pontas,
                                               tarrif_cheias,
@@ -125,11 +128,7 @@ def simulation(request):
 
             message = get_template("email_bte.html").render(Context({
                 'name': simulation_name,
-                'cicle': cicle,
-                'tarrif_ponta': tarrif_pontas,
-                'tarrif_cheia': tarrif_cheias,
-                'tarrif_vazio_normal': tarrif_vazio_normal,
-                'tarrif_super_vazio': tarrif_super_vazio,
+                'cicle_selection_combo': cicle,
                 'save_percentage': save,
             }))
 
@@ -146,11 +145,11 @@ def simulation(request):
 
         # For MT
         elif tension == "3":
-            tarrif_pontas = request.POST['tarrif-pontas']
-            tarrif_cheias = request.POST['tarrif-cheias']
-            tarrif_vazio_normal = request.POST['tarrif-vazio_normal']
-            tarrif_super_vazio = request.POST['tarrif-super-vazio']
-            price_p_month = request.POST['price-p-month']
+            tarrif_pontas = request.POST['input_tarrif_pontas']
+            tarrif_cheias = request.POST['input_tarrif_cheias']
+            tarrif_vazio_normal = request.POST['tarrif_vazio_normal']
+            tarrif_super_vazio = request.POST['tarrif_vazio_normal']
+            price_p_month = request.POST['value_p_month']
 
             save = simulations.simulation_mt(tarrif_pontas,
                                              tarrif_cheias,
@@ -160,11 +159,7 @@ def simulation(request):
 
             message = get_template("email_mt.html").render(Context({
                 'name': simulation_name,
-                'cicle': cicle,
-                'tarrif_ponta': tarrif_pontas,
-                'tarrif_cheia': tarrif_cheias,
-                'tarrif_vazio_normal': tarrif_vazio_normal,
-                'tarrif_super_vazio': tarrif_super_vazio,
+                'cicle_selection_combo': cicle,
                 'save_percentage': save,
             }))
 
