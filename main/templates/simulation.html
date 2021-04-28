@@ -111,6 +111,17 @@
 
         function complete_mt_bte(){
 
+          var select = document.createElement('select');
+          select.setAttribute("id","redes");
+          select.setAttribute("name","redes");
+          select.setAttribute("class","form-control mb-30 col-lg-6");
+
+          select.innerHTML = '' +
+          '<option value="0">Com redes</option>' +
+          '<option value="0">Sem redes</option>';
+
+          document.forms["form"].appendChild(select);
+
           var tarrif_pontas = document.createElement('input');
           tarrif_pontas.setAttribute("type","text");
           tarrif_pontas.setAttribute("name","input_tarrif_pontas");
@@ -214,7 +225,6 @@
                 </select>
                 <select name="cicle_selection_combo" id="" class="form-control mb-30" onchange="moreOptions(tension_selection_combo,this)">
                 </select>
-                </div>
               </div>
             </form>
           </div>
