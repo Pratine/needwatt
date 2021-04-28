@@ -33,17 +33,18 @@ def contact(request):
 
 def simulation(request):
     if request.method == "POST":
-        simulation_name = request.POST['simulation-name']
-        simulation_email = request.POST['simulation-email']
-        tension = request.POST['tension']
-        hired_power = request.POST["hired-power"]
-        cicle = request.POST['cicle']
+        simulation_name = request.POST['message-name']
+        simulation_email = request.POST['message-email']
+        tension = request.POST['tension_selection_combo']
+        cicle = request.POST['cicle_selection_combo']
 
-        if tension == "btn":
+        # For BTN
+        if tension == "1":
             day_start = request.POST["day-start"]
             day_end = request.POST["day-end"]
             n_days = day_end - day_start
             price_p_month = request.POST["price-p-month"]
+            hired_power = request.POST["hired-power"]
 
             if cicle == "simple":
                 save = simulations.simulation_btn_simple(hired_power,
@@ -108,7 +109,8 @@ def simulation(request):
 
                 return render(request, 'simulation.html', {'simulation_name': simulation_name})
 
-        elif tension == "bte":
+        # For BTE
+        elif tension == "2":
             tarrif_pontas = request.POST['tarrif-pontas']
             tarrif_cheias = request.POST['tarrif-cheias']
             tarrif_vazio_normal = request.POST['tarrif-vazio_normal']
@@ -124,7 +126,6 @@ def simulation(request):
             message = get_template("email_bte.html").render(Context({
                 'name': simulation_name,
                 'cicle': cicle,
-                'hired_power': hired_power,
                 'tarrif_ponta': tarrif_pontas,
                 'tarrif_cheia': tarrif_cheias,
                 'tarrif_vazio_normal': tarrif_vazio_normal,
@@ -143,7 +144,8 @@ def simulation(request):
 
             return render(request, 'simulation.html', {'simulation_name': simulation_name})
 
-        elif tension == "mt":
+        # For MT
+        elif tension == "3":
             tarrif_pontas = request.POST['tarrif-pontas']
             tarrif_cheias = request.POST['tarrif-cheias']
             tarrif_vazio_normal = request.POST['tarrif-vazio_normal']
@@ -159,7 +161,6 @@ def simulation(request):
             message = get_template("email_mt.html").render(Context({
                 'name': simulation_name,
                 'cicle': cicle,
-                'hired_power': hired_power,
                 'tarrif_ponta': tarrif_pontas,
                 'tarrif_cheia': tarrif_cheias,
                 'tarrif_vazio_normal': tarrif_vazio_normal,
