@@ -39,6 +39,10 @@ class TariffMTAdmin(admin.ModelAdmin):
               "mt_tarrif_cheias",
               "mt_tarrif_vazio_normal",
               "mt_tarrif_super_vazio",
+              "mt_tarrif_pontas_c_redes",
+              "mt_tarrif_cheias_c_redes",
+              "mt_tarrif_vazio_normal_c_redes",
+              "mt_tarrif_super_vazio_c_redes",
               "mt_tariff_date_start",
               "mt_tariff_date_end"]
 
@@ -50,6 +54,10 @@ class TariffBTEAdmin(admin.ModelAdmin):
               "bte_tarrif_cheias",
               "bte_tarrif_vazio_normal",
               "bte_tarrif_super_vazio",
+              "bte_tarrif_pontas_c_redes",
+              "bte_tarrif_cheias_c_redes",
+              "bte_tarrif_vazio_normal_c_redes",
+              "bte_tarrif_super_vazio_c_redes",
               "bte_tariff_date_start",
               "bte_tariff_date_end"]
 
