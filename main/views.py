@@ -33,14 +33,14 @@ def contact(request):
 
 def simulation(request):
     if request.method == "POST":
-        simulation_name = request.POST['message-name']
-        simulation_email = request.POST['message-email']
+        simulation_name = request.POST['simulation-name']
+        simulation_email = request.POST['simulation-email']
         tension = request.POST['tension_selection_combo']
         cicle = request.POST['cicle_selection_combo']
+        price_p_month = request.POST["value_p_month"]
 
         # For BTN
         if tension == "1":
-            price_p_month = request.POST["price-p-month"]
             hired_power = request.POST["hired-power"]
 
             # For simple
@@ -116,7 +116,6 @@ def simulation(request):
             tarrif_cheias = request.POST['input_tarrif_cheias']
             tarrif_vazio_normal = request.POST['tarrif_vazio_normal']
             tarrif_super_vazio = request.POST['tarrif_vazio_normal']
-            price_p_month = request.POST['value_p_month']
             network = request.POST['network']
 
             # With Networks
@@ -176,7 +175,6 @@ def simulation(request):
             tarrif_cheias = request.POST['input_tarrif_cheias']
             tarrif_vazio_normal = request.POST['tarrif_vazio_normal']
             tarrif_super_vazio = request.POST['tarrif_vazio_normal']
-            price_p_month = request.POST['value_p_month']
             network = request.POST['network']
 
             # With Networks
