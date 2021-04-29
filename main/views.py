@@ -40,16 +40,12 @@ def simulation(request):
 
         # For BTN
         if tension == "1":
-            day_start = request.POST["day-start"]
-            day_end = request.POST["day-end"]
-            n_days = day_end - day_start
             price_p_month = request.POST["price-p-month"]
             hired_power = request.POST["hired-power"]
 
             # For simple
             if cicle == "1":
                 save = simulations.simulation_btn_simple(hired_power,
-                                                         n_days,
                                                          price_p_month)
 
                 message = get_template("email_btn.html").render(Context({
@@ -72,7 +68,6 @@ def simulation(request):
             # For Bi-Hor
             elif cicle == "2":
                 save = simulations.simulation_btn_bi_hor(hired_power,
-                                                         n_days,
                                                          price_p_month)
 
                 message = get_template("email_btn.html").render(Context({
@@ -95,7 +90,6 @@ def simulation(request):
             # For Tri-Hor
             elif cicle == "3":
                 save = simulations.simulation_btn_tri_hor(hired_power,
-                                                          n_days,
                                                           price_p_month)
 
                 message = get_template("email_btn.html").render(Context({

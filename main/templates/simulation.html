@@ -40,8 +40,6 @@
       cicle[2] = new Array("Selecione o ciclo","Diario","Semanal");
       cicle[3] = new Array("Selecione o ciclo","Semanal  c/ feriados","Semanal c/opção do cliente");
 
-      const btn_tension = new Array("Selecione","1.15","2.30","3.45","4.60","5.75","6.90","10.35","13.80","17.25","20.70","27.60","34.50","41.40");
-
       function changeCicle(tension_selection_combo){
         const comboValueCicle = tension_selection_combo.value;
         document.forms["form"].elements["cicle_selection_combo"].options.length=0;
@@ -53,15 +51,62 @@
           }
         }
 
-        function complete_btn_simple() {
+      function complete_btn_simple() {
 
-          document.forms["form"].elements["tension_selection_combo"].options.length=0;
-          for (var i = 0; i < btn_tension.length; i++) {
-            var option_tension = document.createElement("option");
-            option_tension.setAttribute('value', i+1);
-            option_tension.innerHTML = btn_tension[i];
-            document.forms["form"].elements["tension_selection_combo"].appendChild(option_tension);
-          }
+          var select = document.createElement('select');
+          select.setAttribute("id","network");
+          select.setAttribute("name","network");
+          select.setAttribute("class","form-control mb-30 col-lg-6");
+
+          select.innerHTML = '' +
+          '<option value="0">Selecione a sua potência</option>' +
+          '<option value="1.15">1.15</option>' +
+          '<option value="2.30">2.30</option>' +
+          '<option value="3.45">3.45</option>' +
+          '<option value="4.60">4.60</option>' +
+          '<option value="5.75">5.75</option>' +
+          '<option value="6.90">6.90</option>' +
+          '<option value="10.35">10.35</option>' +
+          '<option value="13.80">13.80</option>' +
+          '<option value="17.25">17.25</option>' +
+          '<option value="20.70">20.70</option>';
+
+          document.forms["form"].appendChild(select);
+
+          var value_p_month = document.createElement('input');
+          value_p_month.setAttribute("type","text");
+          value_p_month.setAttribute("name","value_p_month");
+          value_p_month.setAttribute("class","form-control mb-30 col-lg-6");
+          value_p_month.setAttribute("placeholder","Valor por mês");
+          document.forms["form"].appendChild(value_p_month)
+
+          var btn = document.createElement('button');
+          btn.setAttribute("type","submit");
+          btn.setAttribute("class","btn send_btn");
+          btn.textContent = 'Faça a simulação';
+          document.forms["form"].appendChild(btn);
+
+        }
+
+      function complete_btn_bi() {
+
+        var select = document.createElement('select');
+        select.setAttribute("id","network");
+        select.setAttribute("name","network");
+        select.setAttribute("class","form-control mb-30 col-lg-6");
+
+        select.innerHTML = '' +
+        '<option value="0">Selecione a sua potência</option>' +
+        '<option value="3.45">3.45</option>' +
+        '<option value="4.60">4.60</option>' +
+        '<option value="5.75">5.75</option>' +
+        '<option value="6.90">6.90</option>' +
+        '<option value="10.35">10.35</option>' +
+        '<option value="13.80">13.80</option>' +
+        '<option value="17.25">17.25</option>' +
+        '<option value="20.70">20.70</option>';
+
+        document.forms["form"].appendChild(select);
 
           var value_p_month = document.createElement('input');
           value_p_month.setAttribute("type","text");
@@ -77,7 +122,28 @@
           document.forms["form"].appendChild(btn);
         }
 
-        function complete_btn_bi() {
+      function complete_btn_tri() {
+
+        var select = document.createElement('select');
+        select.setAttribute("id","network");
+        select.setAttribute("name","network");
+        select.setAttribute("class","form-control mb-30 col-lg-6");
+
+        select.innerHTML = '' +
+        '<option value="0">Selecione a sua potência</option>' +
+        '<option value="3.45">3.45</option>' +
+        '<option value="4.60">4.60</option>' +
+        '<option value="5.75">5.75</option>' +
+        '<option value="6.90">6.90</option>' +
+        '<option value="10.35">10.35</option>' +
+        '<option value="13.80">13.80</option>' +
+        '<option value="17.25">17.25</option>' +
+        '<option value="20.70">20.70</option>' +
+        '<option value="27.60">27.60</option>' +
+        '<option value="34.50">34.50</option>' +
+        '<option value="41.40">41.40</option>';
+
+        document.forms["form"].appendChild(select);
 
           var value_p_month = document.createElement('input');
           value_p_month.setAttribute("type","text");
@@ -93,23 +159,7 @@
           document.forms["form"].appendChild(btn);
         }
 
-        function complete_btn_tri() {
-
-          var value_p_month = document.createElement('input');
-          value_p_month.setAttribute("type","text");
-          value_p_month.setAttribute("name","value_p_month");
-          value_p_month.setAttribute("class","form-control mb-30 col-lg-6");
-          value_p_month.setAttribute("placeholder","Valor por mês");
-          document.forms["form"].appendChild(value_p_month)
-
-          var btn = document.createElement('button');
-          btn.setAttribute("type","submit");
-          btn.setAttribute("class","btn send_btn");
-          btn.textContent = 'Faça a simulação';
-          document.forms["form"].appendChild(btn);
-        }
-
-        function complete_mt_bte(){
+      function complete_mt_bte(){
 
           var select = document.createElement('select');
           select.setAttribute("id","network");
@@ -166,7 +216,7 @@
           document.forms["form"].appendChild(btn);
         }
 
-        function moreOptions(tension_selection_combo, cicle_selection_combo){
+      function moreOptions(tension_selection_combo, cicle_selection_combo){
           var tensionChosen =  tension_selection_combo.value;
           var cicleChosen = cicle_selection_combo.value;
           if (tensionChosen == 1) {
@@ -184,6 +234,7 @@
             complete_mt_bte();
           }
         }
+
   </script>
 
   <!-- ***** Contact Area Start ***** -->
