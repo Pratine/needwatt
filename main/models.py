@@ -80,6 +80,11 @@ class Tariff_BTE(models.Model):
     bte_tarrif_vazio_normal = models.FloatField("Horas de vazio normal", default=0.0)
     bte_tarrif_super_vazio = models.FloatField("Horas de super vazio", default=0.0)
 
+    bte_tarrif_pontas_c_redes = models.FloatField("Horas Ponta com Redes", default=0.0)
+    bte_tarrif_cheias_c_redes = models.FloatField("Horas Cheias com Redes", default=0.0)
+    bte_tarrif_vazio_normal_c_redes = models.FloatField("Horas de vazio normal com Redes", default=0.0)
+    bte_tarrif_super_vazio_c_redes = models.FloatField("Horas de super vazio com Redes", default=0.0)
+
     bte_tariff_date_start = models.DateField("Data de inicio", default=django.utils.timezone.now)
     bte_tariff_date_end = models.DateField("Data de fim", default=django.utils.timezone.now)
 
@@ -91,9 +96,16 @@ class Tariff_MT(models.Model):
         ('o/c', 'semanal c/opcao cliente')
     )
     mt_cicle = models.CharField("Ciclo", max_length=3, choices=MT_CICLE, default="")
+
     mt_tarrif_pontas = models.FloatField("Horas Ponta", default=0.0)
     mt_tarrif_cheias = models.FloatField("Horas Cheias", default=0.0)
     mt_tarrif_vazio_normal = models.FloatField("Horas de vazio normal", default=0.0)
     mt_tarrif_super_vazio = models.FloatField("Horas de super vazio", default=0.0)
+
+    mt_tarrif_pontas_c_redes = models.FloatField("Horas Ponta com Redes", default=0.0)
+    mt_tarrif_cheias_c_redes = models.FloatField("Horas Cheias com Redes", default=0.0)
+    mt_tarrif_vazio_normal_c_redes = models.FloatField("Horas de vazio normal com Redes", default=0.0)
+    mt_tarrif_super_vazio_c_redes = models.FloatField("Horas de super vazio com Redes", default=0.0)
+
     mt_tariff_date_start = models.DateField("Data de inicio", default=django.utils.timezone.now)
     mt_tariff_date_end = models.DateField("Data de fim", default=django.utils.timezone.now)
