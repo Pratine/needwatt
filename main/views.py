@@ -51,6 +51,7 @@ def simulation(request):
                 save = simulations.simulation_btn_simple(hired_power,
                                                          n_days,
                                                          price_p_month)
+
                 message = get_template("email_btn.html").render(Context({
                     'name': simulation_name,
                     'cicle_selection_combo': cicle,
@@ -73,6 +74,7 @@ def simulation(request):
                 save = simulations.simulation_btn_bi_hor(hired_power,
                                                          n_days,
                                                          price_p_month)
+
                 message = get_template("email_btn.html").render(Context({
                     'name': simulation_name,
                     'cicle_selection_combo': cicle,
@@ -95,6 +97,7 @@ def simulation(request):
                 save = simulations.simulation_btn_tri_hor(hired_power,
                                                           n_days,
                                                           price_p_month)
+
                 message = get_template("email_btn.html").render(Context({
                     'name': simulation_name,
                     'cicle_selection_combo': cicle,
@@ -114,65 +117,123 @@ def simulation(request):
 
         # For BTE
         elif tension == "2":
+
             tarrif_pontas = request.POST['input_tarrif_pontas']
             tarrif_cheias = request.POST['input_tarrif_cheias']
             tarrif_vazio_normal = request.POST['tarrif_vazio_normal']
             tarrif_super_vazio = request.POST['tarrif_vazio_normal']
             price_p_month = request.POST['value_p_month']
+            network = request.POST['network']
 
-            save = simulations.simulation_bte(tarrif_pontas,
-                                              tarrif_cheias,
-                                              tarrif_vazio_normal,
-                                              tarrif_super_vazio,
-                                              price_p_month)
+            # With Networks
+            if network == "0":
+                save = simulations.simulation_bte_with_network(tarrif_pontas,
+                                                               tarrif_cheias,
+                                                               tarrif_vazio_normal,
+                                                               tarrif_super_vazio,
+                                                               price_p_month)
 
-            message = get_template("email_bte.html").render(Context({
-                'name': simulation_name,
-                'cicle_selection_combo': cicle,
-                'save_percentage': save,
-            }))
+                message = get_template("email_bte.html").render(Context({
+                    'name': simulation_name,
+                    'cicle_selection_combo': cicle,
+                    'save_percentage': save,
+                }))
 
-            mail = EmailMessage(
-                subject="Simulação energética da NeedWatt",
-                body=message,
-                from_email='noreply@needwatt.com',
-                to=simulation_email,
-            )
-            mail.content_subtype = "html"
-            mail.send()
+                mail = EmailMessage(
+                    subject="Simulação energética da NeedWatt",
+                    body=message,
+                    from_email='noreply@needwatt.com',
+                    to=simulation_email,
+                )
+                mail.content_subtype = "html"
+                mail.send()
 
-            return render(request, 'simulation.html', {'simulation_name': simulation_name})
+                return render(request, 'simulation.html', {'simulation_name': simulation_name})
+
+            # Without Networks
+            if network == "1":
+                save = simulations.simulation_bte_without_network(tarrif_pontas,
+                                                                  tarrif_cheias,
+                                                                  tarrif_vazio_normal,
+                                                                  tarrif_super_vazio,
+                                                                  price_p_month)
+
+                message = get_template("email_bte.html").render(Context({
+                    'name': simulation_name,
+                    'cicle_selection_combo': cicle,
+                    'save_percentage': save,
+                }))
+
+                mail = EmailMessage(
+                    subject="Simulação energética da NeedWatt",
+                    body=message,
+                    from_email='noreply@needwatt.com',
+                    to=simulation_email,
+                )
+                mail.content_subtype = "html"
+                mail.send()
+
+                return render(request, 'simulation.html', {'simulation_name': simulation_name})
 
         # For MT
         elif tension == "3":
+
             tarrif_pontas = request.POST['input_tarrif_pontas']
             tarrif_cheias = request.POST['input_tarrif_cheias']
             tarrif_vazio_normal = request.POST['tarrif_vazio_normal']
             tarrif_super_vazio = request.POST['tarrif_vazio_normal']
             price_p_month = request.POST['value_p_month']
+            network = request.POST['network']
 
-            save = simulations.simulation_mt(tarrif_pontas,
-                                             tarrif_cheias,
-                                             tarrif_vazio_normal,
-                                             tarrif_super_vazio,
-                                             price_p_month)
+            # With Networks
+            if network == "0":
+                save = simulations.simulation_mt_with_network(tarrif_pontas,
+                                                               tarrif_cheias,
+                                                               tarrif_vazio_normal,
+                                                               tarrif_super_vazio,
+                                                               price_p_month)
 
-            message = get_template("email_mt.html").render(Context({
-                'name': simulation_name,
-                'cicle_selection_combo': cicle,
-                'save_percentage': save,
-            }))
+                message = get_template("email_bte.html").render(Context({
+                    'name': simulation_name,
+                    'cicle_selection_combo': cicle,
+                    'save_percentage': save,
+                }))
 
-            mail = EmailMessage(
-                subject="Simulação energética da NeedWatt",
-                body=message,
-                from_email='noreply@needwatt.com',
-                to=simulation_email,
-            )
-            mail.content_subtype = "html"
-            mail.send()
+                mail = EmailMessage(
+                    subject="Simulação energética da NeedWatt",
+                    body=message,
+                    from_email='noreply@needwatt.com',
+                    to=simulation_email,
+                )
+                mail.content_subtype = "html"
+                mail.send()
 
-            return render(request, 'simulation.html', {'simulation_name': simulation_name})
+                return render(request, 'simulation.html', {'simulation_name': simulation_name})
+
+            # Without Networks
+            if network == "1":
+                save = simulations.simulation_mt_without_network(tarrif_pontas,
+                                                                  tarrif_cheias,
+                                                                  tarrif_vazio_normal,
+                                                                  tarrif_super_vazio,
+                                                                  price_p_month)
+
+                message = get_template("email_bte.html").render(Context({
+                    'name': simulation_name,
+                    'cicle_selection_combo': cicle,
+                    'save_percentage': save,
+                }))
+
+                mail = EmailMessage(
+                    subject="Simulação energética da NeedWatt",
+                    body=message,
+                    from_email='noreply@needwatt.com',
+                    to=simulation_email,
+                )
+                mail.content_subtype = "html"
+                mail.send()
+
+                return render(request, 'simulation.html', {'simulation_name': simulation_name})
 
     else:
         return render(request, 'simulation.html', {})
