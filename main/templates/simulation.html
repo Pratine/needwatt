@@ -40,8 +40,6 @@
       cicle[2] = new Array("Selecione o ciclo","Diario","Semanal");
       cicle[3] = new Array("Selecione o ciclo","Semanal  c/ feriados","Semanal c/opção do cliente");
 
-      const btn_tension = new Array("Selecione","1.15","2.30","3.45","4.60","5.75","6.90","10.35","13.80","17.25","20.70","27.60","34.50","41.40");
-
       function changeCicle(tension_selection_combo){
         const comboValueCicle = tension_selection_combo.value;
         document.forms["form"].elements["cicle_selection_combo"].options.length=0;
@@ -61,7 +59,7 @@
           select.setAttribute("class","form-control mb-30 col-lg-6");
 
           select.innerHTML = '' +
-          '<option value="0">Selecione a potencia</option>' +
+          '<option value="0">Selecione a sua potência</option>' +
           '<option value="1.15">1.15</option>' +
           '<option value="2.30">2.30</option>' +
           '<option value="3.45">3.45</option>' +
@@ -98,7 +96,7 @@
         select.setAttribute("class","form-control mb-30 col-lg-6");
 
         select.innerHTML = '' +
-        '<option value="0">Selecione a potencia</option>' +
+        '<option value="0">Selecione a sua potência</option>' +
         '<option value="3.45">3.45</option>' +
         '<option value="4.60">4.60</option>' +
         '<option value="5.75">5.75</option>' +
@@ -132,7 +130,7 @@
         select.setAttribute("class","form-control mb-30 col-lg-6");
 
         select.innerHTML = '' +
-        '<option value="0">Selecione a potencia</option>' +
+        '<option value="0">Selecione a sua potência</option>' +
         '<option value="3.45">3.45</option>' +
         '<option value="4.60">4.60</option>' +
         '<option value="5.75">5.75</option>' +
