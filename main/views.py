@@ -1,6 +1,5 @@
 from django.core.mail import send_mail, EmailMessage
 from django.shortcuts import render
-from django.http import HttpResponse
 from django.template import Context
 
 # Create your views here.
@@ -45,10 +44,10 @@ def simulation(request):
 
             # For simple
             if cicle == "1":
-                save = simulations.simulation_btn_simple(hired_power,
-                                                         price_p_month)
+                save = simulations.simulation_btn_simple(float(hired_power),
+                                                         float(price_p_month))
 
-                message = get_template("email_btn.html").render(Context({
+                '''message = get_template("email_btn.html").render(Context({
                     'name': simulation_name,
                     'cicle_selection_combo': cicle,
                     'hired_power': hired_power,
@@ -61,16 +60,16 @@ def simulation(request):
                     to=simulation_email,
                 )
                 mail.content_subtype = "html"
-                mail.send()
+                mail.send()'''
 
                 return render(request, 'simulation.html', {'simulation_name': simulation_name})
 
             # For Bi-Hor
             elif cicle == "2":
-                save = simulations.simulation_btn_bi_hor(hired_power,
-                                                         price_p_month)
+                save = simulations.simulation_btn_bi_hor(float(hired_power),
+                                                         float(price_p_month))
 
-                message = get_template("email_btn.html").render(Context({
+                '''message = get_template("email_btn.html").render(Context({
                     'name': simulation_name,
                     'cicle_selection_combo': cicle,
                     'hired_power': hired_power,
@@ -83,16 +82,16 @@ def simulation(request):
                     to=simulation_email,
                 )
                 mail.content_subtype = "html"
-                mail.send()
+                mail.send()'''
 
                 return render(request, 'simulation.html', {'simulation_name': simulation_name})
 
             # For Tri-Hor
             elif cicle == "3":
-                save = simulations.simulation_btn_tri_hor(hired_power,
-                                                          price_p_month)
+                save = simulations.simulation_btn_tri_hor(float(hired_power),
+                                                          float(price_p_month))
 
-                message = get_template("email_btn.html").render(Context({
+                '''message = get_template("email_btn.html").render(Context({
                     'name': simulation_name,
                     'cicle_selection_combo': cicle,
                     'hired_power': hired_power,
@@ -105,7 +104,7 @@ def simulation(request):
                     to=simulation_email,
                 )
                 mail.content_subtype = "html"
-                mail.send()
+                mail.send()'''
 
                 return render(request, 'simulation.html', {'simulation_name': simulation_name})
 
@@ -120,13 +119,13 @@ def simulation(request):
 
             # With Networks
             if network == "0":
-                save = simulations.simulation_bte_with_network(tarrif_pontas,
-                                                               tarrif_cheias,
-                                                               tarrif_vazio_normal,
-                                                               tarrif_super_vazio,
-                                                               price_p_month)
+                save = simulations.simulation_bte_with_network(float(tarrif_pontas),
+                                                               float(tarrif_cheias),
+                                                               float(tarrif_vazio_normal),
+                                                               float(tarrif_super_vazio),
+                                                               float(price_p_month))
 
-                message = get_template("email_bte.html").render(Context({
+                '''message = get_template("email_bte.html").render(Context({
                     'name': simulation_name,
                     'cicle_selection_combo': cicle,
                     'save_percentage': save,
@@ -139,19 +138,19 @@ def simulation(request):
                     to=simulation_email,
                 )
                 mail.content_subtype = "html"
-                mail.send()
+                mail.send()'''
 
                 return render(request, 'simulation.html', {'simulation_name': simulation_name})
 
             # Without Networks
             if network == "1":
-                save = simulations.simulation_bte_without_network(tarrif_pontas,
-                                                                  tarrif_cheias,
-                                                                  tarrif_vazio_normal,
-                                                                  tarrif_super_vazio,
-                                                                  price_p_month)
+                save = simulations.simulation_bte_without_network(float(tarrif_pontas),
+                                                                  float(tarrif_cheias),
+                                                                  float(tarrif_vazio_normal),
+                                                                  float(tarrif_super_vazio),
+                                                                  float(price_p_month))
 
-                message = get_template("email_bte.html").render(Context({
+                '''message = get_template("email_bte.html").render(Context({
                     'name': simulation_name,
                     'cicle_selection_combo': cicle,
                     'save_percentage': save,
@@ -164,7 +163,7 @@ def simulation(request):
                     to=simulation_email,
                 )
                 mail.content_subtype = "html"
-                mail.send()
+                mail.send()'''
 
                 return render(request, 'simulation.html', {'simulation_name': simulation_name})
 
@@ -179,13 +178,13 @@ def simulation(request):
 
             # With Networks
             if network == "0":
-                save = simulations.simulation_mt_with_network(tarrif_pontas,
-                                                               tarrif_cheias,
-                                                               tarrif_vazio_normal,
-                                                               tarrif_super_vazio,
-                                                               price_p_month)
+                save = simulations.simulation_mt_with_network(float(tarrif_pontas),
+                                                              float(tarrif_cheias),
+                                                              float(tarrif_vazio_normal),
+                                                              float(tarrif_super_vazio),
+                                                              float(price_p_month))
 
-                message = get_template("email_bte.html").render(Context({
+                '''message = get_template("email_bte.html").render(Context({
                     'name': simulation_name,
                     'cicle_selection_combo': cicle,
                     'save_percentage': save,
@@ -198,19 +197,19 @@ def simulation(request):
                     to=simulation_email,
                 )
                 mail.content_subtype = "html"
-                mail.send()
+                mail.send()'''
 
                 return render(request, 'simulation.html', {'simulation_name': simulation_name})
 
             # Without Networks
             if network == "1":
-                save = simulations.simulation_mt_without_network(tarrif_pontas,
-                                                                  tarrif_cheias,
-                                                                  tarrif_vazio_normal,
-                                                                  tarrif_super_vazio,
-                                                                  price_p_month)
+                save = simulations.simulation_mt_without_network(float(tarrif_pontas),
+                                                                 float(tarrif_cheias),
+                                                                 float(tarrif_vazio_normal),
+                                                                 float(tarrif_super_vazio),
+                                                                 float(price_p_month))
 
-                message = get_template("email_bte.html").render(Context({
+                '''message = get_template("email_bte.html").render(Context({
                     'name': simulation_name,
                     'cicle_selection_combo': cicle,
                     'save_percentage': save,
@@ -223,7 +222,7 @@ def simulation(request):
                     to=simulation_email,
                 )
                 mail.content_subtype = "html"
-                mail.send()
+                mail.send()'''
 
                 return render(request, 'simulation.html', {'simulation_name': simulation_name})
 
