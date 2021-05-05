@@ -3,7 +3,6 @@ from pathlib import Path
 import django_heroku
 import dj_database_url
 from decouple import config
-import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -12,10 +11,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = 'django-insecure-*_bnc+_li+po7yd+(dr02@5&y-fbfe41=#m)b8d0m@2ez+opci'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ['BEGUG']
+DEBUG = 'False'
 
 ALLOWED_HOSTS = []
 
@@ -121,10 +120,9 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Email settings
-EMAIL_HOST = os.environ['EMAIL_HOST']
-EMAIL_PORT = os.environ['EMAIL_PORT']
-EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
-EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
-EMAIL_USE_TLS = os.environ['EMAIL_USE_TLS']
-
+EMAIL_HOST = 'mail.everonline.eu'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+# EMAIL_USE_TLS = False
 django_heroku.settings(locals())
