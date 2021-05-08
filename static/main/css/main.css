@@ -928,19 +928,6 @@ service
 #more .left-text-content p {
   margin-bottom: 25px;
 }
-/*
----------------------------------------------
-portfolio
----------------------------------------------
-*/
-
-#portfolio{
-  margin-top: 30px;
-  padding: 100px 0px 0px 0px;
-  position: relative;
-  z-index: 9;
-}
-
 
 /*
 ---------------------------------------------
@@ -997,6 +984,65 @@ about
   opacity: .9;
 }
 
+
+#poli {
+  margin-top: 20px;
+  padding: 100px 0px 0px 0px;
+  position: relative;
+  z-index: 9;
+  text-align: justify;
+}
+
+#poli .section-heading h2 {
+  padding-right: 120px;
+  text-align: center;
+}
+
+#poli img {
+  width: 65%;
+  overflow: hidden;
+}
+
+#poli .right-content {
+  margin-left: 30px;
+  margin-top: 40px;
+}
+
+#poli .right-content .thumb {
+  position: relative;
+}
+
+#poli .right-content h6{
+  position: relative;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+#poli .right-content .thumb a {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 70px;
+  height: 70px;
+  display: inline-block;
+  line-height: 70px;
+  text-align: center;
+  background-color: #3f8aca;
+  color: #fff;
+  border-radius: 50%;
+  transform: translate(-35px, -35px);
+  transition: all .3s;
+}
+
+#poli .right-content .thumb a:hover {
+  opacity: .9;
+}
+
+#poli .left-text-content p {
+  margin-top: 10px;
+  margin-bottom: 25px;
+  text-align: justify;
+}
 
 /*
 ---------------------------------------------

@@ -26,6 +26,8 @@ def home(request):
     else:"""
 
 
+def privacy_policy(request):
+    return render(request, 'privacy_policy.html', {})
 
 
 def simulation(request):
