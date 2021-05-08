@@ -7,9 +7,6 @@ app_name = "main"
 urlpatterns = [
     path('', views.home, name="home"),
     path('home.html', views.home, name='home'),
-    path('contact.html', views.contact, name="contact"),
-    path('about.html', views.about, name="about"),
-    path('service.html', views.service, name="service"),
     path('simulation.html', views.simulation, name="simulation"),
 
     # Urls de servicos

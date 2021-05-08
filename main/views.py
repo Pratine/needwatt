@@ -9,10 +9,7 @@ from . import simulations
 
 def home(request):
     return render(request, 'home.html', {})
-
-
-def contact(request):
-    if request.method == "POST":
+    """if request.method == "POST":
         message_name = request.POST['message-name']
         message_email = request.POST['message-email']
         message = request.POST['message']
@@ -24,10 +21,11 @@ def contact(request):
             ['geral@needwatt.com'],
             fail_silently=True,
         )
-        return render(request, 'contact.html', {'message_name': message_name})
+        return render(request, 'home.html', {'message_name': message_name})
 
-    else:
-        return render(request, 'contact.html', {})
+    else:"""
+
+
 
 
 def simulation(request):
@@ -229,13 +227,6 @@ def simulation(request):
     else:
         return render(request, 'simulation.html', {})
 
-
-def about(request):
-    return render(request, 'about.html', {})
-
-
-def service(request):
-    return render(request, 'service.html', {})
 
 
 # Views related with the many services that NeedWatt offer
