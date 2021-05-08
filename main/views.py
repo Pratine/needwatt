@@ -8,10 +8,10 @@ from . import simulations
 
 
 def home(request):
-    return render(request, 'home.html', {})
-    """if request.method == "POST":
-        message_name = request.POST['message-name']
-        message_email = request.POST['message-email']
+
+    if request.method == "POST":
+        message_name = request.POST['name']
+        message_email = request.POST['email']
         message = request.POST['message']
 
         send_mail(
@@ -23,8 +23,8 @@ def home(request):
         )
         return render(request, 'home.html', {'message_name': message_name})
 
-    else:"""
-
+    else:
+        return render(request, 'home.html', {})
 
 def privacy_policy(request):
     return render(request, 'privacy_policy.html', {})
