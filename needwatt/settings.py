@@ -17,6 +17,7 @@ SECRET_KEY = 'django-insecure-*_bnc+_li+po7yd+(dr02@5&y-fbfe41=#m)b8d0m@2ez+opci
 DEBUG = 'False'
 
 ALLOWED_HOSTS = []
+SECURE_SSL_REDIRECT = True
 
 # Application definition
 

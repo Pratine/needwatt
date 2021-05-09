@@ -8,8 +8,12 @@ from . import simulations
 
 
 def home(request):
-
     if request.method == "POST":
+        captcha_token = request.POST.get("g-recaptcha-response")
+        cap_url = "https://www.google.com/recaptcha/api/siteverify"
+        cap_secret = "6Lc2j8waAAAAABL4Ry8jMN_ozv5Dr_-EYLeMeuu4"
+        cap_data = {"secret": cap_secret, "response": captcha_token}
+        
         message_name = request.POST['name']
         message_email = request.POST['email']
         message = request.POST['message']
@@ -25,6 +29,7 @@ def home(request):
 
     else:
         return render(request, 'home.html', {})
+
 
 def privacy_policy(request):
     return render(request, 'privacy_policy.html', {})
@@ -228,7 +233,6 @@ def simulation(request):
 
     else:
         return render(request, 'simulation.html', {})
-
 
 
 # Views related with the many services that NeedWatt offer
