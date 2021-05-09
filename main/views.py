@@ -1,6 +1,8 @@
-from django.core.mail import send_mail, EmailMessage
+from django.core.mail import send_mail
 from django.shortcuts import render
 from django.template import Context
+import urllib
+import json
 
 # Create your views here.
 from django.template.loader import render_to_string, get_template
@@ -8,12 +10,20 @@ from . import simulations
 
 
 def home(request):
+
     if request.method == "POST":
-        captcha_token = request.POST.get("g-recaptcha-response")
-        cap_url = "https://www.google.com/recaptcha/api/siteverify"
-        cap_secret = "6Lc2j8waAAAAABL4Ry8jMN_ozv5Dr_-EYLeMeuu4"
-        cap_data = {"secret": cap_secret, "response": captcha_token}
-        
+
+        recaptcha_response = request.POST.get('g-recaptcha-response')
+        url = 'https://www.google.com/recaptcha/api/siteverify'
+        values = {
+            'secret': '6Lc2j8waAAAAABL4Ry8jMN_ozv5Dr_-EYLeMeuu4',
+            'response': recaptcha_response
+        }
+        data = urllib.parse.urlencode(values).encode()
+        req = urllib.request.Request(url, data=data)
+        response = urllib.request.urlopen(req)
+        json.loads(response.read().decode())
+
         message_name = request.POST['name']
         message_email = request.POST['email']
         message = request.POST['message']
