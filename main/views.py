@@ -1,6 +1,8 @@
-from django.core.mail import send_mail, EmailMessage
+from django.core.mail import send_mail
 from django.shortcuts import render
 from django.template import Context
+import urllib
+import json
 
 # Create your views here.
 from django.template.loader import render_to_string, get_template
@@ -8,13 +10,22 @@ from . import simulations
 
 
 def home(request):
-    return render(request, 'home.html', {})
 
-
-def contact(request):
     if request.method == "POST":
-        message_name = request.POST['message-name']
-        message_email = request.POST['message-email']
+
+        recaptcha_response = request.POST.get('g-recaptcha-response')
+        url = 'https://www.google.com/recaptcha/api/siteverify'
+        values = {
+            'secret': '6Lc2j8waAAAAABL4Ry8jMN_ozv5Dr_-EYLeMeuu4',
+            'response': recaptcha_response
+        }
+        data = urllib.parse.urlencode(values).encode()
+        req = urllib.request.Request(url, data=data)
+        response = urllib.request.urlopen(req)
+        json.loads(response.read().decode())
+
+        message_name = request.POST['name']
+        message_email = request.POST['email']
         message = request.POST['message']
 
         send_mail(
@@ -24,10 +35,14 @@ def contact(request):
             ['geral@needwatt.com'],
             fail_silently=True,
         )
-        return render(request, 'contact.html', {'message_name': message_name})
+        return render(request, 'home.html', {'message_name': message_name})
 
     else:
-        return render(request, 'contact.html', {})
+        return render(request, 'home.html', {})
+
+
+def privacy_policy(request):
+    return render(request, 'privacy_policy.html', {})
 
 
 def simulation(request):
@@ -228,14 +243,6 @@ def simulation(request):
 
     else:
         return render(request, 'simulation.html', {})
-
-
-def about(request):
-    return render(request, 'about.html', {})
-
-
-def service(request):
-    return render(request, 'service.html', {})
 
 
 # Views related with the many services that NeedWatt offer

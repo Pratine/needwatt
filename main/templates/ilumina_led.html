@@ -1,65 +1,179 @@
-{% extends 'base.html' %}
 {% load static %}
-{% block title %}Serviços da NeedWatt{%endblock %}
-{% block meta_description %}Iluminação Led{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block content %}
+  <head>
 
-<!-- ***** Breadcrumb Area Start ***** -->
-<div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url({% static 'main/img/bg-img/ener0.jpg' %});">
-  <div class="container h-100">
-    <div class="row h-100 align-items-center">
-      <div class="col-12">
-        <h2 class="title">Iluminação Led</h2>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="breadcumb--con">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="./home.html"><i class="fa fa-home"></i> Home</a></li>
-            <li class="breadcrumb-item"><a href="./service.html"><i class="fa fa-service"></i> Serviços</a></li>
-            <li class="breadcrumb-item active" aria-current="page"> Iluminação Led</li>
-          </ol>
-        </nav>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- ***** Breadcrumb Area End ***** -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 
-<section class="about-us-area mt-70">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-12 col-md-6">
-        <div class="about-us-thumbnail mb-50">
-          <img src="{% static 'main/img/bg-img/ener8.jpg' %}" alt="">
+    <title>NeedWatt</title>
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/bootstrap.min.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/font-awesome.css' %}">
+
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+
+    <link rel="stylesheet" href="{% static 'main/css/owl-carousel.css' %}">
+
+    <link rel="stylesheet" href="{% static 'main/css/lightbox.css' %}">
+
+    </head>
+
+    <body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
-      </div>
-      <div class="col-12 col-md-6">
-        <div class="service_content mb-50">
-          <div class="section-heading">
-            <h2>Iluminação Led</h2>
-            <h3>Projetos Iluminação Led</h3>
-            <div class="line"></div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="./home.html" class="logo">
+                            <img src="{% static 'main/images/logo1.png' %}" align="center">
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="./home.html#top">Home</a></li>
+                            <li class="submenu">
+                                <a href="javascript:;"class="active">Serviços</a>
+                                <ul>
+                                    <li><a href="./autit_cert_ener.html"><strong>Auditoria e Certificação Energética</strong></a></li>
+                                    <li><a href="./autoconsumo_foto.html"><strong>Autoconsumo Fotovoltaico</strong></a></li>
+                                    <li><a href="./bater_conde.html"><strong>Baterias de Condensadores</strong></a></li>
+                                    <li><a href="./carrega_viatu_eletric.html"><strong>Carregamento de viaturas elétricas</strong></a></li>
+                                    <li><a href="./ilumina_led.html"><strong>Iluminação Led</strong></a></li>
+                                    <li><a href="./merca_lib_ener.html"><strong>Mercado Liberalizado de Energia Elétrica e Gás</strong></a></li>
+                                    <li><a href="./sistem_monito_energ.html"><strong>Sistema de Monitorização de Energia</strong></a></li>
+                                </ul>
+                            </li>
+                            <li class="scroll-to-section"><a href="./home.html#about">Sobre</a></li>
+                            <li class="scroll-to-section"><a href="./home.html#contacts">Contactos</a></li>
+                            <li><a href="./simulation.html">Simulação</a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <section class="section" id="more">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-xs-12">
+            <div class="text-content">
+              <div class="section-heading">
+                <h2>Iluminação Led</h2>
+                <p>A tecnologia de iluminação tem sofrido nos últimos anos avanços significativos, nomeadamente com a introdução e rápido desenvolvimento dos LED’s.</p>
+                <br>
+                <p>A Needwatt  coopera com os mais prestigiados fabricantes nacionais e internacionais para Lhe proporcionar uma ampla gama de soluções de iluminação LED,  tanto para instalações industriais como também para comerciais.</p>
+                <br>
+                <br>
+                <h6>Benefícios da Iluminação Led</h6>
+                <br>
+              <p>&nbsp&nbsp&nbsp•&nbsp Apresentação de estudo de viabilidade técnico-financeiro de Eficiência Energética</p>
+              <p>&nbsp&nbsp&nbsp•&nbsp Diminuição de consumo de energia elétrica até 70%</p>
+              <p>&nbsp&nbsp&nbsp•&nbsp Redução de despesas de manutenção</p>
+              <p>&nbsp&nbsp&nbsp•&nbsp 2 a 5 Anos de Garantia</p>
+              <p>&nbsp&nbsp&nbsp•&nbsp Possibilidade de Investimento nulo</p>
+
+              </div>
+            </div>
           </div>
-          <p>A tecnologia de iluminação tem sofrido nos últimos anos avanços significativos, nomeadamente com a introdução e rápido desenvolvimento dos LED’s.</p>
-          <p>A Needwatt  coopera com os mais prestigiados fabricantes nacionais e internacionais para Lhe proporcionar uma ampla gama de soluções de iluminação LED,  tanto para instalações industriais como também para comerciais.</p>
-          <h3>Benefícios da Iluminação Led</h3>
-          <p>•	Apresentação de estudo de viabilidade técnico-financeiro de Eficiência Energética</p>
-          <p>•	Diminuição de consumo de energia elétrica até 70%</p>
-          <p>•	Redução de despesas de manutenção</p>
-          <p>•	2 a 5 Anos de Garantia</p>
-          <p>•	Possibilidade de Investimento nulo</p>
+          <div class="col-lg-6 col-md-6 col-xs-12">
+            <div class="right-content">
+              <div class="thumb">
+                  <img src="{% static 'main/images/led0.jpg' %}" alt="">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+      </section>
 
-{% endblock %}
+    <!-- ***** Footer Start ***** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+              <div class="col-lg-4 col-xs-12">
+                <div class="left-text-content">
+                    <p>Contacto: <strong>916530234</strong></p>
+                    <p>Contacto: <strong>927579369</strong></p>
+                      <p>Email: <strong>geral@needwatt.com</strong></p>
+                </div>
+              </div>
+                <div class="col-lg-4">
+                    <div class="logo">
+                        <a href="home.html"><img src="{% static 'main/images/logo0.png' %}" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xs-12">
+                    <div class="left-text-content">
+                        <p>© Copyright NeedWatt
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="{% static 'main/js/jquery-2.1.0.min.js' %}"></script>
+
+    <!-- Bootstrap -->
+    <script src="{% static 'main/js/popper.js' %}"></script>
+    <script src="{% static 'main/js/bootstrap.min.js' %}"></script>
+
+    <!-- Plugins -->
+    <script src="{% static 'main/js/owl-carousel.js' %}"></script>
+    <script src="{% static 'main/js/accordions.js' %}"></script>
+    <script src="{% static 'main/js/datepicker.js' %}"></script>
+    <script src="{% static 'main/js/scrollreveal.min.js' %}"></script>
+    <script src="{% static 'main/js/waypoints.min.js' %}"></script>
+    <script src="{% static 'main/js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'main/js/imgfix.min.js' %}"></script>
+    <script src="{% static 'main/js/slick.js' %}"></script>
+    <script src="{% static 'main/js/lightbox.js' %}"></script>
+    <script src="{% static 'main/js/isotope.js' %}"></script>
+
+    <!-- Global Init -->
+    <script src="{% static 'main/js/custom.js' %}"></script>
+    <script>
+
+        $(function() {
+            var selectedClass = "";
+            $("p").click(function(){
+            selectedClass = $(this).attr("data-rel");
+            $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("."+selectedClass).fadeOut();
+            setTimeout(function() {
+              $("."+selectedClass).fadeIn();
+              $("#portfolio").fadeTo(50, 1);
+            }, 500);
+
+            });
+        });
+
+    </script>
+  </body>
+</html>
